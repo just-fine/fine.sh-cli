@@ -3,7 +3,6 @@ builds = require './builds'
 
 start = () ->
   user_settings = await settings.safe_get
-  console.log 1, builds
   processor = (fine.is_tourist and builds.tourist) or builds.leaguer
   
   processor user_settings
