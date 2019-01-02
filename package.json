@@ -5,7 +5,9 @@
   "main": "dist/bin/fine.js",
   "preferGlobal": true,
   "scripts": {
-    "start": "rm -rf temp && coffee -co temp/w.js scripts/webpack.coffee && webpack --config temp/w.js -p -w",
+    "start": "npm run pre_build && webpack --config temp/w.js -p -w",
+    "build": "npm run pre_build && webpack --config temp/w.js -p",
+    "pre_build": "rm -rf temp && coffee -co temp/w.js scripts/webpack.coffee",
     "clean": "rm -rf dist temp"
   },
   "bin": {
