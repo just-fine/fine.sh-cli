@@ -15,7 +15,7 @@ promps = [{
   message: 'Do you need to create a configuration file？\n  (preview site has 1 hour limit)\n'
 }]
 
-tourist_check = () ->
+guider = () ->
   try
     { is_tourist } = await inquirer.prompt promps
     fine.is_tourist = is_tourist
@@ -24,4 +24,5 @@ tourist_check = () ->
     console.log err
     process 1
 
-module.exports = tourist_check
+module.exports =
+  run: guider

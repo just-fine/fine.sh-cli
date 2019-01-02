@@ -2,7 +2,7 @@ fs = require 'fs'
 path = require 'path'
 inquirer = require 'inquirer'
 template = require './template'
-tourist_check = require './tourist'
+guider = require './guider'
 
 isDirectory = (dir_name) ->
   return false if not fs.existsSync dir_name
@@ -49,11 +49,11 @@ create_setting_file = (setting) ->
 # return a setting file
 # create a new setting file if not found
 # do nothing if user select tourist (preview publish)
-init = () ->
+initiator = () ->
   setting = do find_setting_file
   return setting if setting
   
-  is_tourist = await do tourist_check
+  is_tourist = await do guider.run
   return template if is_tourist
   
   try
@@ -63,4 +63,5 @@ init = () ->
     console.log err
     process.exit 1
 
-module.exports = init
+module.exports =
+  run: initiator
