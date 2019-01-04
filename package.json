@@ -1,5 +1,5 @@
 {
-  "name": "@fine/cli",
+  "name": "@fine.sh/cli",
   "version": "0.0.1",
   "description": "",
   "main": "dist/bin/fine.js",
