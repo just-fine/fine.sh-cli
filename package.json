@@ -43,7 +43,9 @@
   "dependencies": {
     "chalk": "^2.4.1",
     "commander": "^2.19.0",
+    "highlight.js": "^9.13.1",
     "inquirer": "^6.2.1",
+    "marked": "^0.6.0",
     "update-notifier": "^2.5.0"
   }
 }
