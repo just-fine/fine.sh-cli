@@ -1,0 +1,51 @@
+{
+  "name": "@fine/cli",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/bin/fine.js",
+  "preferGlobal": true,
+  "scripts": {
+    "start": "npm run pre_build && webpack --config temp/w.js -p -w",
+    "build": "npm run pre_build && webpack --config temp/w.js -p",
+    "pre_build": "rm -rf temp && coffee -co temp/w.js scripts/webpack.coffee",
+    "clean": "rm -rf dist temp"
+  },
+  "bin": {
+    "fine": "dist/bin/fine.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WittBulter/fine.git"
+  },
+  "files": [
+    "LICENSE",
+    "READNE.md",
+    "dist/",
+    "templates/"
+  ],
+  "author": "WittBulter (nanazuimeng123@gmail.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/WittBulter/fine/issues"
+  },
+  "devDependencies": {
+    "@commitlint/config-conventional": "^7.1.2",
+    "coffee-loader": "^0.9.0",
+    "coffeescript": "^2.3.2",
+    "commitizen": "^3.0.5",
+    "commitlint": "^7.2.1",
+    "cz-conventional-changelog": "^2.1.0",
+    "husky": "^1.3.0",
+    "webpack": "^4.28.3",
+    "webpack-cli": "^3.1.2"
+  },
+  "homepage": "https://github.com/WittBulter/fine#readme",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "commander": "^2.19.0",
+    "highlight.js": "^9.13.1",
+    "inquirer": "^6.2.1",
+    "marked": "^0.6.0",
+    "update-notifier": "^2.5.0"
+  }
+}
