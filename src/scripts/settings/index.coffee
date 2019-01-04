@@ -1,8 +1,7 @@
 initiator = require './initiator'
 
 class Settings
-  @_setting = {}
-  @test = 'ok'
+  _setting = {}
   
   @check_setting_file: () ->
     return await do initiator.run if not @_setting.project_name

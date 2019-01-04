@@ -15,7 +15,7 @@ make_entry_to_cache = (apis) ->
   target_path = path.join fine.storage.cache.path, 'index.html'
   fs.writeFileSync target_path, content, 'utf-8'
 
-write_to_cache = (file_path) ->
+make_html_to_cache = (file_path) ->
   { name } = path.parse file_path
   content = await marked (fs.readFileSync file_path, 'utf-8')
   hash = make_hash content
@@ -25,9 +25,10 @@ write_to_cache = (file_path) ->
 
 compiler = (files = [], settings) ->
   do fine.storage.cache.clear
-  hashes = (await write_to_cache file for file in files)
+  hashes = (await make_html_to_cache file for file in files)
   runtime_apis = runtime.run hashes, settings
   make_entry_to_cache runtime_apis
+
 
 module.exports =
   run: compiler

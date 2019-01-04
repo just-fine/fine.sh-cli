@@ -11,7 +11,6 @@ is_markdown = (paths) -> Boolean /\.md$/.test paths
 
 is_directory = (paths) -> Boolean (fs.statSync paths).isDirectory()
 
-
 collect_paths_of_file = (catalog) ->
   collect = (paths) ->
     return [paths] if is_markdown paths
@@ -22,8 +21,6 @@ collect_paths_of_file = (catalog) ->
     return next.filter (r) -> r?
   
   collect catalog
-
-
 
 
 module.exports =

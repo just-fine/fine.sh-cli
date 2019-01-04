@@ -9,8 +9,6 @@ notifier { pkg, updateCheckInterval: 1 }
 commander
   .version pkg.version
   .usage '<command> [options]'
-  .command 'show'
-    .alias 'i'
   .parse(process.argv)
 
 build = require '../scripts/start'

@@ -7,10 +7,6 @@ start = () ->
   
   processor user_settings
   
-  
-  
 
 do start
-#source =
-
 
