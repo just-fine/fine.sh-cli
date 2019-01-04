@@ -6,3 +6,4 @@ module.exports =
   target: null
   
   fine_version: pkg.version
+  
