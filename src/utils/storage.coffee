@@ -14,8 +14,9 @@ init_home = () ->
 class Cache
   path: cache_dir
   
-  clear:
-    child.execSync("rm -rf #{cache_dir}")
+  clear: () ->
+    child.execSync "rm -rf #{cache_dir}"
+    fs.mkdirSync cache_dir
 
 class BaseIO
   find_all: () ->
@@ -33,7 +34,8 @@ class BaseIO
     json
 
 class Storage extends BaseIO
-  constructor: () ->
+  constructor: (arg) ->
+    super arg
     do init_home
     @cache = new Cache
 
