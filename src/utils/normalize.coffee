@@ -1,4 +1,5 @@
 pkg = require '../../package.json'
+storage = require './storage'
 
 Function::define = (prop, desc) ->
   actions = {}
@@ -11,5 +12,7 @@ global.fine =
   version: pkg.version
   
   is_tourist: false
+
+  storage: storage
   
   
