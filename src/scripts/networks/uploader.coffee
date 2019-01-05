@@ -16,7 +16,6 @@ upload = () ->
       formData: { attachments }
       
     if not json.repo_name
-      console.log json
       fine.print.error json.message if json.message
       return fine.print.error 'upload failure.'
 

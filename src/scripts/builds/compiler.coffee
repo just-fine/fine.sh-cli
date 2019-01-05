@@ -12,6 +12,8 @@ make_hash = (content) ->
 
 make_entry_to_cache = (apis) ->
   content = runtime_template.replace 'FINE_INTERFACE', (JSON.stringify apis)
+  
+  
   target_path = path.join fine.storage.cache.path, 'index.html'
   fs.writeFileSync target_path, content, 'utf-8'
 
