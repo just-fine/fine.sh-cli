@@ -41,11 +41,14 @@
   },
   "homepage": "https://github.com/WittBulter/fine#readme",
   "dependencies": {
+    "axios": "^0.18.0",
     "chalk": "^2.4.1",
     "commander": "^2.19.0",
     "highlight.js": "^9.13.1",
     "inquirer": "^6.2.1",
     "marked": "^0.6.0",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2",
     "update-notifier": "^2.5.0"
   }
 }

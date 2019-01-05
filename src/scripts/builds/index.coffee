@@ -5,7 +5,7 @@ class Builds
   
   tourist: (settings) ->
     files = collector.run do process.cwd
-    compiler.run files, settings
+    await compiler.run files, settings
   
   leaguer: (settings) ->
   

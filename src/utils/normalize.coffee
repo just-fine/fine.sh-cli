@@ -1,5 +1,6 @@
 pkg = require '../../package.json'
 storage = require './storage'
+print = require './print'
 
 Function::define = (prop, desc) ->
   actions = {}
@@ -14,5 +15,8 @@ global.fine =
   is_tourist: false
 
   storage: storage
+
+  print: print
+  
   
   

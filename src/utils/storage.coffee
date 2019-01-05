@@ -39,7 +39,7 @@ class Storage extends BaseIO
     do init_home
     @cache = new Cache
 
-  cache: {}
+  @cache: {}
   
   save: (key, value = null) ->
     return {} if not key

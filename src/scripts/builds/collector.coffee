@@ -17,7 +17,7 @@ collect_paths_of_file = (catalog) ->
     return [null] if (is_ignore paths) or not is_directory paths
     next = []
     join = (name) -> path.join paths, name
-    (next = next.concat collect join child) for child in fs.readdirSync paths
+    (next = next.concat collect join child) for child in fs.readdirSync paths, 'utf-8'
     return next.filter (r) -> r?
   
   collect catalog
