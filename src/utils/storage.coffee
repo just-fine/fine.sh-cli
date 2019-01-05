@@ -22,8 +22,8 @@ class BaseIO
   find_all: () ->
     json
     try
-      json = JSON.parse fs.readFileSync storage_file 'utf-8'
-    catch
+      json = JSON.parse fs.readFileSync storage_file, 'utf-8'
+    catch err
       json = {}
     json
   

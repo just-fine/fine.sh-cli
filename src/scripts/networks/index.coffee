@@ -2,9 +2,9 @@ uploader = require './uploader'
 login = require './login'
 
 class Apis
-  upload: () -> await do uploader.run
+  upload: uploader.run
   
-  login: () -> await do login.run
+  login: login.run
   
   
 

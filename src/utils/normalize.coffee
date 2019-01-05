@@ -17,6 +17,10 @@ global.fine =
   storage: storage
 
   print: print
+  
+  exit: (txt) ->
+    console.log txt
+    process.exit 1
 
   
   

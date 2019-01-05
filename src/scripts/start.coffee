@@ -13,7 +13,7 @@ start = () ->
   processor = (fine.is_tourist and builds.tourist) or builds.leaguer
 
   await processor user_settings
-#  await do apis.upload
+  await apis.upload user_settings
 
 if arg is 'login'
   do login
