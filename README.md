@@ -1,23 +1,14 @@
 <p align="center" height="250">
   <img height="300" src="logo.png" align="center"/>
 </p>
-<p align=center>
-</p>
+<br/>
 
-## fine -- generate your document site in 3 seconds
-
-<div align="center" height="250" width="800">
+> fine -- generate your document site in 3 seconds
+  
   fine 目前仍旧处于测试版本，我们会不断补充更多的功能，同时也尽可能的提高它的健壮性。
   
   你可以在 [这里](https://github.com/WittBulter/fine.sh-cli/issues/new) 留下建议和反馈。
-</div>
 
-
-## 赞助
-
-[![Beerpay](https://beerpay.io/WittBulter/fine.sh-cli/badge.svg?style=beer)](https://beerpay.io/WittBulter/fine.sh-cli)
-
-<br/>
 
 ## 什么是 fine
 
@@ -28,6 +19,20 @@
    当然，最重要的是，fine 是免费的。
    
    [了解更多](https://fine.sh) 
+
+<br/>
+
+## 尝试一下
+
+   ```
+   npx @fine.sh/cli
+   ```
+
+<br/>
+
+## 赞助
+
+[![Beerpay](https://beerpay.io/WittBulter/fine.sh-cli/badge.svg?style=beer)](https://beerpay.io/WittBulter/fine.sh-cli)
 
 <br/>
 
