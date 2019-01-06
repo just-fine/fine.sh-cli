@@ -20,7 +20,7 @@ request.defaults
     'Content-Type': 'application/json'
 
 host = 'api.fine.sh'
-host = '127.0.0.1:1337'
+#host = '127.0.0.1:1337'
 
 request.make_options = (options) ->
   Object.assign {

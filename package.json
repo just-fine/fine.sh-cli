@@ -1,6 +1,6 @@
 {
   "name": "@fine.sh/cli",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "",
   "main": "dist/bin/fine.js",
   "preferGlobal": true,
@@ -8,6 +8,7 @@
     "start": "npm run pre_build && webpack --config temp/w.js -p -w",
     "build": "npm run pre_build && webpack --config temp/w.js -p",
     "pre_build": "rm -rf temp && coffee -co temp/w.js scripts/webpack.coffee",
+    "deploy": "npm run build && npm publish --access=public",
     "clean": "rm -rf dist temp"
   },
   "bin": {

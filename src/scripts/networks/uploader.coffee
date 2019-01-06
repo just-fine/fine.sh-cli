@@ -25,7 +25,7 @@ project_name_check = (settings) ->
 upload = (settings) ->
   upload_url = (fine.is_tourist and '/previews') or "/projects/#{settings.project_name}/files"
 
-  if fine.is_tourist
+  if not fine.is_tourist
     await project_name_check settings
     
   make_absolute_path = (p) -> path.join fine.storage.cache.path, p
