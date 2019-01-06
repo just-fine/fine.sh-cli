@@ -33,11 +33,6 @@
 
 <br/>
 
-## 赞助
-
-[![Beerpay](https://beerpay.io/WittBulter/fine.sh-cli/badge.svg?style=beer)](https://beerpay.io/WittBulter/fine.sh-cli)
-
-<br/>
 
 
 ## LICENSE
