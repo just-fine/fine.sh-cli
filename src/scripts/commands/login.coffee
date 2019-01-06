@@ -1,6 +1,6 @@
 open = require 'opn'
 ora = require 'ora'
-http = require './http'
+http = require '../networks/http'
 
 request_token = () ->
   json = await http.post '/tokens', do http.make_options
@@ -16,7 +16,7 @@ request_session = (token) ->
     return false if not json or not json.token
     json.token
   catch err
-  
+
 login = () ->
   wait = new ora
   token = await do request_token
@@ -31,6 +31,7 @@ login = () ->
     clearInterval timer
     process.exit 1
   ), 650)
+
 
 module.exports =
   run: login

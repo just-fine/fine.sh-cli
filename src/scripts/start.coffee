@@ -1,12 +1,8 @@
-commander = require 'commander'
 settings = require './settings'
 builds = require './builds'
 apis = require './networks'
+commands = require './commands'
 
-arg = commander.args[0]
-
-login = () ->
-  await do apis.login
 
 start = () ->
   user_settings = await settings.safe_get
@@ -15,8 +11,6 @@ start = () ->
   await processor user_settings
   await apis.upload user_settings
 
-if arg is 'login'
-  do login
-else
-  do start
-
+do ->
+  has_command = await do commands.run
+  do start if not has_command
