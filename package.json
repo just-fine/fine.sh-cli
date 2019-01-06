@@ -1,6 +1,6 @@
 {
   "name": "@fine.sh/cli",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "",
   "main": "dist/bin/fine.js",
   "preferGlobal": true,
@@ -42,7 +42,6 @@
   },
   "homepage": "https://github.com/WittBulter/fine#readme",
   "dependencies": {
-    "axios": "^0.18.0",
     "chalk": "^2.4.1",
     "cli-table3": "^0.5.1",
     "commander": "^2.19.0",

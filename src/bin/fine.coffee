@@ -6,8 +6,9 @@ pkg = require '../../package.json'
 notifier { pkg, updateCheckInterval: 1 }
   .notify { isGlobal: true }
 
+
 commander
-  .version pkg.version
+  .version pkg.version, '-v, --version'
   .usage '<command> [options]'
   .parse(process.argv)
 

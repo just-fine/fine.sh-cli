@@ -4,6 +4,7 @@ chalk = require 'chalk'
 
 auto_parse = (body, response, full) ->
   if response.statusCode is 403
+    console.log ''
     console.log chalk.red " #{emoji.get 'raised_hand'}  authentication failure, access is denied."
     console.log chalk.cyan " #{emoji.get 'point_right'} try use [#{chalk.yellow 'fine login'}]"
     process.exit 1
