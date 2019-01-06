@@ -20,7 +20,7 @@ class Builds
     await compiler.run files, settings
   
   leaguer: (settings) =>
-    return if not @check settings
+    return process.exit 1 if not @check settings
     absolute_folder = path.join (do process.cwd), settings.document_folder
     files = collector.run absolute_folder
     await compiler.run files, settings

@@ -9,16 +9,27 @@ isDirectory = (dir_name) ->
   stat = fs.statSync (path.join process.cwd(), dir_name)
   Boolean do stat.isDirectory
 
+fine_name_from_package = () ->
+  package_path = path.join do process.cwd, 'package.json'
+  return null if not fs.existsSync package_path
+  json = {}
+  try
+    json = JSON.parse fs.readFileSync package_path, 'utf-8'
+  catch
+    json = {}
+  (json.name and json.name) or null
+
 promps = [
   {
     type: 'input'
     name: 'project_name'
-    message: 'Enter your project name:'
+    message: 'project name:'
+    default: do fine_name_from_package
     validate: (txt) -> txt?
   }
   {
     type: 'input'
-    name: 'target'
+    name: 'document_folder'
     message: 'Which folder do you need to publish (enter c to exit):'
     validate: (txt) ->
       process.exit 1 if txt is 'c'
