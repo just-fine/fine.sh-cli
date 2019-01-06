@@ -53,7 +53,7 @@ create_setting_file = (setting) ->
   paths = path.join process.cwd(), '.fine'
   full_setting = Object.assign {}, template, setting
   fs.mkdirSync paths if not fs.existsSync paths
-  fs.writeFileSync (path.join paths, 'fine.json'), JSON.stringify full_setting
+  fs.writeFileSync (path.join paths, 'fine.json'), JSON.stringify full_setting, '', '\t'
   console.log 'setting file (.fine/fine.json) created. \n'
   full_setting
 

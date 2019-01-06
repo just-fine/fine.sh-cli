@@ -1,7 +1,12 @@
 fs = require 'fs'
 path = require 'path'
+ora = require 'ora'
 http = require './http'
+wait = new ora
 
+count = (len) ->
+  (len <= 0 and 1) or len - 1
+  
 project_name_check = (settings) ->
   json
   try
@@ -24,7 +29,8 @@ upload = (settings) ->
     .map (file) -> make_absolute_path file
     .filter (r) -> Boolean r
     .map (file) -> fs.createReadStream file
-
+  
+  wait.start "#{count attachments.length} files awaiting processing..."
   try
     json = await http.post http.make_options
       uri: upload_url,
@@ -32,9 +38,10 @@ upload = (settings) ->
       
     if not json.repo_name
       fine.print.error json.message if json.message
-      return fine.print.error 'upload failure.'
+      return wait.fail 'upload failure.'
 
     url = "https://#{json.repo_name}.fine.sh/"
+    wait.succeed "uploaded #{count attachments.length} files."
     fine.print.success 'created, your project is running online.'
     fine.print.success "visit link: #{url}"
   catch err

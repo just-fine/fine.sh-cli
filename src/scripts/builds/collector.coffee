@@ -20,9 +20,11 @@ collect_paths_of_file = (catalog) ->
     (next = next.concat collect join child) for child in fs.readdirSync paths, 'utf-8'
     return next.filter (r) -> r?
   
-  collect catalog
+  files = collect catalog
+  fine.exit 'no documents were found.' if not files or files.length is 0
+  fine.exit 'too many files. documents cannot exceed 100.' if files.length > 100
+  files
 
 
 module.exports =
   run: collect_paths_of_file
-
