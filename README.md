@@ -1,3 +1,13 @@
+<p align="center" height="250">
+  <img height="300" src="logo.png" align="center"/>
+</p>
+<p align=center>
+<a target="_blank" href="https://www.npmjs.com/package/@fine.sh/cli" title="NPM version"><img src="https://img.shields.io/npm/v/@fine.sh/cli/latest.svg?style=flat-square"></a>
+<a target="_blank" href="https://www.npmjs.com/package/@fine.sh/clis" title="Node version"><img src="https://img.shields.io/npm/dt/@fine.sh/cli.svg?style=flat-square"></a>
+<a target="_blank" href="https://opensource.org/licenses/MIT" title="License: MIT"><img src="https://img.shields.io/github/license/WittBulter/@fine.sh/cli.svg?style=flat-square"></a>
+<a target="_blank" href="https://travis-ci.org/WittBulter/@fine.sh/cli" title="Build Status"><img src="https://img.shields.io/travis/WittBulter/@fine.sh/cli.svg?style=flat-square"></a>
+</p>
+
 ## fine -- generate your document site in 3 seconds
 
 > fine 目前仍旧处于测试版本，我们会不断补充更多的功能，同时也尽可能的提高它的健壮性。
