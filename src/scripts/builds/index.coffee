@@ -10,7 +10,7 @@ class Builds
     if not settings.project_name
       fine.print.error 'you need to specify "project_name" in your fine.json.'
       return false
-    if not /^[a-zA-Z][a-zA-Z0-9_]{4,20}$/.test settings.project_name
+    if not fine.project_reg.test settings.project_name
       fine.print.error 'project_name is not allowed.'
       fine.print.error 'allow symbols: [a-Z], [0-9], [_]'
       return false

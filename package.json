@@ -48,6 +48,7 @@
     "highlight.js": "^9.13.1",
     "inquirer": "^6.2.1",
     "marked": "^0.6.0",
+    "node-emoji": "^1.8.1",
     "opn": "^5.4.0",
     "ora": "^3.0.0",
     "request": "^2.88.0",

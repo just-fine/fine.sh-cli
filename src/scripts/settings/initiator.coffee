@@ -1,6 +1,8 @@
-fs = require 'fs'
-path = require 'path'
 inquirer = require 'inquirer'
+emoji = require 'node-emoji'
+chalk = require 'chalk'
+path = require 'path'
+fs = require 'fs'
 template = require './template'
 guider = require './guider'
 
@@ -25,15 +27,23 @@ promps = [
     name: 'project_name'
     message: 'project name:'
     default: do fine_name_from_package
-    validate: (txt) -> txt?
+    validate: (txt) ->
+      pass = fine.project_reg.test txt
+      if not pass
+        console.log chalk.yellow "\n#{emoji.get 'white_frowning_face'} this name can't be used.\n"
+      pass
   }
   {
     type: 'input'
     name: 'document_folder'
     message: 'Which folder do you need to publish (enter c to exit):'
     validate: (txt) ->
-      process.exit 1 if txt is 'c'
-      return console.log '\nthis is not a folder.' if not isDirectory txt
+      if txt.toLowerCase() is 'c'
+        console.log chalk.yellow "\n#{emoji.get 'wave'} it's cancelled. nothing happened."
+        process.exit 1
+      if not isDirectory txt
+        console.log chalk.yellow "\n#{emoji.get 'white_frowning_face'} this is not a folder.\n"
+        return false
       true
   }
 ]
@@ -46,7 +56,8 @@ find_setting_file = () ->
   try
     return JSON.parse setting
   catch err
-    console.log 'configuration file has some problems. check ".fine/fine.json" agian.'
+    console.log chalk.red " #{emoji.get 'x'}  there are problems in the setting file."
+    console.log chalk.cyan " #{emoji.get 'thinking_face'} you need to check [#{chalk.yellow '.fine/fine.json'}] agian."
     process.exit 1
 
 create_setting_file = (setting) ->
@@ -54,7 +65,9 @@ create_setting_file = (setting) ->
   full_setting = Object.assign {}, template, setting
   fs.mkdirSync paths if not fs.existsSync paths
   fs.writeFileSync (path.join paths, 'fine.json'), JSON.stringify full_setting, '', '\t'
-  console.log 'setting file (.fine/fine.json) created. \n'
+  
+  console.log ''
+  console.log chalk.green " #{emoji.get 'coffee'} setting file (.fine/fine.json) created.\n"
   full_setting
 
 # return a setting file
@@ -71,8 +84,7 @@ initiator = () ->
     answer = await inquirer.prompt promps
     return create_setting_file answer
   catch err
-    console.log err
-    process.exit 1
+    fine.exit err
 
 module.exports =
   run: initiator

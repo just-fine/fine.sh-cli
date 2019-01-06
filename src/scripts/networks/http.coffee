@@ -1,9 +1,11 @@
 request = require 'request-promise'
+emoji = require 'node-emoji'
+chalk = require 'chalk'
 
 auto_parse = (body, response, full) ->
   if response.statusCode is 403
-    fine.print.error 'authentication failure.'
-    fine.print.error 'please login with command "fine login".'
+    console.log chalk.red " #{emoji.get 'raised_hand'}  authentication failure, access is denied."
+    console.log chalk.cyan " #{emoji.get 'point_right'} try use [#{chalk.yellow 'fine login'}]"
     process.exit 1
     
   return JSON.parse body if /application\/json/.test response.headers['content-type']
@@ -17,9 +19,7 @@ request.defaults
   headers:
     'Content-Type': 'application/json'
 
-argv = process.argv or []
-is_dev = argv.reverse()[0] is 'test'
-host = (is_dev and '127.0.0.1:1337') or 'api.fine.sh'
+host = 'api.fine.sh'
 host = '127.0.0.1:1337'
 
 request.make_options = (options) ->

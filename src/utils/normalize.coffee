@@ -1,6 +1,8 @@
 pkg = require '../../package.json'
 storage = require './storage'
 print = require './print'
+emoji = require 'node-emoji'
+chalk = require 'chalk'
 
 Function::define = (prop, desc) ->
   actions = {}
@@ -18,9 +20,11 @@ global.fine =
 
   print: print
   
+  project_reg: /^[a-zA-Z][a-zA-Z0-9_]{4,20}$/
+  
   exit: (txt) ->
-    console.log txt
+    console.log chalk.red "#{emoji.get 'astonished'} something looks wrong."
+    console.log chalk.red txt if txt
     process.exit 1
-
   
   

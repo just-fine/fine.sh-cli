@@ -1,5 +1,6 @@
 Table = require 'cli-table3'
 chalk = require 'chalk'
+emoji = require 'node-emoji'
 ora = require 'ora'
 http = require '../networks/http'
 wait = new ora
@@ -22,10 +23,11 @@ fine_list = () ->
   wait.start 'refresh projects...'
   try
     json = await http '/projects', do http.make_options
-    if not json or not json.projects
-      wait.fail 'not found projects.'
+    if not json or not json.projects or json.projects.length is 0
+      wait.clear()
+      console.log chalk.yellow "#{emoji.get 'anguished'} not found projects."
       process.exit 1
-    
+  
     print_list json.projects
   catch err
     fine.exit err

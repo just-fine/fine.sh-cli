@@ -1,6 +1,8 @@
-fs = require 'fs'
+emoji = require 'node-emoji'
+chalk = require 'chalk'
 path = require 'path'
 ora = require 'ora'
+fs = require 'fs'
 http = require './http'
 wait = new ora
 
@@ -14,7 +16,9 @@ project_name_check = (settings) ->
   catch err
     fine.exit err
   return true if json and json.pass is true
-  fine.print.error 'project_name is already taken.'
+  console.log ''
+  console.log chalk.yellow " #{emoji.get 'joy_cat'} project_name is already taken."
+  console.log chalk.cyan " #{emoji.get 'point_right'} try to modify project name in [#{chalk.yellow '[fine.json]'}]"
   process.exit 1
 
 
@@ -41,12 +45,14 @@ upload = (settings) ->
       return wait.fail 'upload failure.'
 
     url = "https://#{json.repo_name}.fine.sh/"
-    wait.succeed "uploaded #{count attachments.length} files."
-    fine.print.success 'created, your project is running online.'
-    fine.print.success "visit link: #{url}"
-  catch err
-    console.log err
+    
+    do wait.clear
+    console.log chalk.white " #{emoji.get 'rocket'} uploaded #{count attachments.length} files.\n"
+    console.log chalk.cyan " #{emoji.get '+1'} great! your project is running online now."
+    console.log chalk.cyan " #{emoji.get 'link'} visit link: #{chalk.yellow.underline url}"
     process.exit 1
+  catch err
+    fine.exit err
     
     
 module.exports =

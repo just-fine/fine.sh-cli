@@ -2,6 +2,8 @@ commander = require 'commander'
 commands =
   login: require './login'
   ls: require './list'
+  who: require './who'
+  rm: require './remove'
 
 
 dispense_command = () ->

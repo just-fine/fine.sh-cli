@@ -21,8 +21,7 @@ guider = () ->
     fine.is_tourist = is_tourist
     is_tourist
   catch err
-    console.log err
-    process 1
+    fine.exit err
 
 module.exports =
   run: guider
