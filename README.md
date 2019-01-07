@@ -15,7 +15,7 @@
 
 ## 预览
 
-<p align="center" height="250">
+<p align="left" height="250">
   <img height="300" src="fine.sh.gif" align="center"/>
 </p>
 
