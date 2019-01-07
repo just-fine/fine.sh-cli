@@ -1,0 +1,141 @@
+# The configurations that used for the recording, feel free to edit them
+config:
+
+  # Specify a command to be executed
+  # like `/bin/bash -l`, `ls`, or any other commands
+  # the default is bash for Linux
+  # or powershell.exe for Windows
+  command: zsh
+  
+  # Specify the current working directory path
+  # the default is the current working directory path
+  cwd: /Users/WittBulter/Documents/Haifeng/fine.sh-cli
+  
+  # Export additional ENV variables
+  env:
+    recording: true
+  
+  # Explicitly set the number of columns
+  # or use `auto` to take the current
+  # number of columns of your shell
+  cols: 70
+  
+  # Explicitly set the number of rows
+  # or use `auto` to take the current
+  # number of rows of your shell
+  rows: 14
+  
+  # Amount of times to repeat GIF
+  # If value is -1, play once
+  # If value is 0, loop indefinitely
+  # If value is a positive number, loop n times
+  repeat: 0
+  
+  # Quality
+  # 1 - 100
+  quality: 100
+  
+  # Delay between frames in ms
+  # If the value is `auto` use the actual recording delays
+  frameDelay: auto
+  
+  # Maximum delay between frames in ms
+  # Ignored if the `frameDelay` isn't set to `auto`
+  # Set to `auto` to prevent limiting the max idle time
+  maxIdleTime: 2000
+  
+  # The surrounding frame box
+  # The `type` can be null, window, floating, or solid`
+  # To hide the title use the value null
+  # Don't forget to add a backgroundColor style with a null as type
+  frameBox:
+    type: floating
+    title: fine.sh
+    style: []
+      # border: 0px black solid
+      # boxShadow: none
+      # margin: 0px
+  
+  # Add a watermark image to the rendered gif
+  # You need to specify an absolute path for
+  # the image on your machine or a URL, and you can also
+  # add your own CSS styles
+  watermark:
+    imagePath: null
+    style:
+      position: absolute
+      right: 15px
+      bottom: 15px
+      width: 100px
+      opacity: 0.9
+  
+  # Cursor style can be one of
+  # `block`, `underline`, or `bar`
+  cursorStyle: block
+  
+  # Font family
+  # You can use any font that is installed on your machine
+  # in CSS-like syntax
+  fontFamily: "Monaco, Lucida Console, Ubuntu Mono, Monospace"
+  
+  # The size of the font
+  fontSize: 22
+  
+  # The height of lines
+  lineHeight: 1
+  
+  # The spacing between letters
+  letterSpacing: 0
+  
+  # Theme
+  theme:
+    background: "transparent"
+    foreground: "#afafaf"
+    cursor: "#c7c7c7"
+    black: "#232628"
+    red: "#fc4384"
+    green: "#b3e33b"
+    yellow: "#ffa727"
+    blue: "#75dff2"
+    magenta: "#ae89fe"
+    cyan: "#708387"
+    white: "#d5d5d0"
+    brightBlack: "#626566"
+    brightRed: "#ff7fac"
+    brightGreen: "#c8ed71"
+    brightYellow: "#ebdf86"
+    brightBlue: "#75dff2"
+    brightMagenta: "#ae89fe"
+    brightCyan: "#b1c6ca"
+    brightWhite: "#f9f9f4"
+  
+# Records, feel free to edit them
+records:
+  - delay: 501
+    content: "                                                                                                                                                                                \r\r\r\e[0m\e[27m\e[24m\e[JWittBulter-MacBook-Pro% \e[K\e[?2004h"
+  - delay: 1552
+    content: f
+  - delay: 147
+    content: "\bfi"
+  - delay: 45
+    content: 'n'
+  - delay: 265
+    content: e
+  - delay: 217
+    content: "\e[?2004l\r\r\n"
+  - delay: 567
+    content: "\e[?25l\e[32m?\e[39m \e[1mDo you need to create a configuration file？\e[22m\r\n\e[1m  (preview site has 1 hour limit)\e[22m\r\n\e[1m\e[22m\e[0m \e[0m\e[2m(Use arrow keys)\e[22m\r\n\e[36m❯ No, build now!\e[39m \r\n  OK, generate a setting file in project. \e[42D\e[42C"
+  - delay: 1844
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mDo you need to create a configuration file？\e[22m\r\n\e[1m  (preview site has 1 hour limit)\e[22m\r\n\e[1m\e[22m\e[0m \e[0m\e[36mNo, build now!\e[39m\e[15D\e[15C\r\n\e[?25h"
+  - delay: 234
+    content: "\e[?25l\e[36m⠋\e[39m 1 files awaiting processing..."
+  - delay: 83
+    content: "\e[2K\e[1G\e[36m⠙\e[39m 1 files awaiting processing..."
+  - delay: 82
+    content: "\e[2K\e[1G\e[36m⠹\e[39m 1 files awaiting processing..."
+  - delay: 19
+    content: "\e[2K\e[1G\e[37m \U0001F680 uploaded 1 files.\e[39m\r\n\e[37m\e[39m\r\n\e[36m \U0001F44D great! your project is running online now.\e[39m\r\n\e[36m \U0001F517 visit link: \e[33m\e[4mhttps://148075237127.fine.sh/\e[24m\e[36m\e[39m\r\n\e[?25h"
+  - delay: 11
+    content: "                                                                                                                                                                                \r\r\r\e[0m\e[27m\e[24m\e[JWittBulter-MacBook-Pro% \e[K\e[?2004h"
+  - delay: 1892
+    content: "\e[?2004l\r\r\n"
