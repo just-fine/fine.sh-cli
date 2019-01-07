@@ -1,5 +1,7 @@
-fs = require 'fs'
+emoji = require 'node-emoji'
+chalk = require 'chalk'
 path = require 'path'
+fs = require 'fs'
 
 ignores = [
   /node_modules/, /\.git/, /\.idea/
@@ -21,8 +23,17 @@ collect_paths_of_file = (catalog) ->
     return next.filter (r) -> r?
   
   files = collect catalog
-  fine.exit 'no documents were found.' if not files or files.length is 0
-  fine.exit 'too many files. documents cannot exceed 100.' if files.length > 100
+  if not files or files.length is 0
+    console.log ''
+    console.log chalk.yellow " #{emoji.get 'whale'} no documents (.md) were found."
+    console.log chalk.cyan " #{emoji.get 'point_right'} try create a document called \"hello.md\"? "
+    process.exit 1
+
+  if files.length > 100
+    console.log ''
+    console.log chalk.yellow " #{emoji.get 'thinking_face'} too many files. documents cannot exceed 100."
+    process.exit 1
+
   files
 
 

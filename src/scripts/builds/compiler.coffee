@@ -12,13 +12,22 @@ make_hash = (content) ->
 
 make_entry_to_cache = (apis) ->
   content = runtime_template.replace 'FINE_INTERFACE', (JSON.stringify apis)
-  
-  
   target_path = path.join fine.storage.cache.path, 'index.html'
   fs.writeFileSync target_path, content, 'utf-8'
 
+_temp_names = {}
+remove_duplication = (name) ->
+  if not _temp_names[name]
+    _temp_names[name] = 1
+    return name
+  _temp_names[name] = _temp_names[name] + 1
+  next = "#{name}_#{_temp_names[name]}"
+  return next if next is remove_duplication next
+  remove_duplication next
+
 make_html_to_cache = (file_path) ->
   { name } = path.parse file_path
+  name = remove_duplication name
   content = await marked (fs.readFileSync file_path, 'utf-8')
   hash = make_hash content
   target_path = path.join fine.storage.cache.path, "#{name}.#{hash}.html"
