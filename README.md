@@ -1,5 +1,5 @@
 <p align="center" height="250">
-  <img height="300" src="fine.sh.gif" align="center"/>
+  <img height="300" src="logo.png" align="center"/>
 </p>
 <br/>
 <br/>
@@ -12,6 +12,14 @@
 
 
 <br/>
+
+## 预览
+
+<p align="center" height="250">
+  <img height="300" src="fine.sh.gif" align="center"/>
+</p>
+
+
 
 ## 什么是 fine
 
