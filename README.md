@@ -1,5 +1,5 @@
 <p align="center" height="250">
-  <img height="300" src="logo.png" align="center"/>
+  <img height="300" src="fine.sh.gif" align="center"/>
 </p>
 <br/>
 <br/>
