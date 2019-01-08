@@ -37,6 +37,7 @@ promps = [
     type: 'input'
     name: 'document_folder'
     message: 'Which folder do you need to publish (enter c to exit):'
+    default: './'
     validate: (txt) ->
       if txt.toLowerCase() is 'c'
         console.log chalk.yellow "\n#{emoji.get 'wave'} it's cancelled. nothing happened."
