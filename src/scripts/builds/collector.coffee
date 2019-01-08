@@ -2,6 +2,7 @@ emoji = require 'node-emoji'
 chalk = require 'chalk'
 path = require 'path'
 fs = require 'fs'
+current_dir = process.cwd()
 
 ignores = [
   /node_modules/, /\.git/, /\.idea/
@@ -13,14 +14,22 @@ is_markdown = (paths) -> Boolean /\.md$/.test paths
 
 is_directory = (paths) -> Boolean (fs.statSync paths).isDirectory()
 
+# collect file and return
+# { path: string, name: string, category?: string }
 collect_paths_of_file = (catalog) ->
+  make_node = (paths) ->
+    { name, dir } =  path.parse paths
+    category = (dir.split path.sep).pop()
+    category = null if dir is current_dir
+    { path: paths, name, category }
+  
   collect = (paths) ->
-    return [paths] if is_markdown paths
+    return [make_node paths] if is_markdown paths
     return [null] if (is_ignore paths) or not is_directory paths
     next = []
     join = (name) -> path.join paths, name
     (next = next.concat collect join child) for child in fs.readdirSync paths, 'utf-8'
-    return next.filter (r) -> r?
+    return next.filter (r) -> r and r.name
   
   files = collect catalog
   if not files or files.length is 0
