@@ -22,13 +22,20 @@ sides_assign_settings = (sides, settings) ->
   (has_index and sides) or set_default_index sides
 
 sides_assign_category = (sides) ->
+  remove_duplicate = (children) ->
+    keys = {}
+    children.filter (r) ->
+      return false if keys[r.label]
+      keys[r.label] = true
+      return true
+
   next = sides.filter (item) -> not item.category
   categories = {}
   for item in sides
     if item.category
       categories[item.category] ?= []
       categories[item.category].push { url: item.url, label: item.label }
-  next.push { label: key, children: item }  for key, item of categories
+  next.push { label: key, children: remove_duplicate item }  for key, item of categories
   next
 
 make_catalog = (files) ->

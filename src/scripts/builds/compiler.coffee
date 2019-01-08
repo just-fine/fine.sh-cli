@@ -35,8 +35,8 @@ make_html_to_cache = (file) ->
 # file = { path: string, name: string, category?: string }
 compiler = (files = [], settings) ->
   do fine.storage.cache.clear
-  has_hash_files = (await make_html_to_cache file for file in files)
-  runtime_apis = runtime.run has_hash_files, settings
+  hashed_files = (await make_html_to_cache file for file in files)
+  runtime_apis = runtime.run hashed_files, settings
   make_entry_to_cache runtime_apis
 
 module.exports =
