@@ -44,7 +44,7 @@
 
 ## THANKS
 
-&emsp;&emsp;Translator:
+Translator:
 
   -  Szyanne
 
@@ -54,3 +54,6 @@
 
 
 <a target="_blank" href="https://opensource.org/licenses/MIT" title="License: MIT"><img src="https://img.shields.io/github/license/WittBulter/fine.sh-cli.svg?style=flat-square"></a>
+
+<br/>
+<br/>
