@@ -6,14 +6,15 @@
 
 > fine -- generate your document site in 3 seconds
   
-  fine 目前仍旧处于测试版本，我们会不断补充更多的功能，同时也尽可能的提高它的健壮性。
+&emsp;&emsp;Fine is currently in beta, and we will bring more updates on its functionality and integrity as the project develops.
   
-  你可以在 [这里](https://github.com/WittBulter/fine.sh-cli/issues/new) 留下建议和反馈。
+&emsp;&emsp;You can leave comments and suggestions [here](https://github.com/just-fine/fine.sh-cli/issues/new).
 
+&emsp;&emsp;[中文文档](README_CN.md)
 
 <br/>
 
-## 预览
+## Preview
 
 <p align="left" height="250">
   <img height="300" src="fine.sh.gif" align="center"/>
@@ -21,19 +22,19 @@
 
 
 
-## 什么是 fine
+## What is Fine
 
-   fine 是帮助你在无服务器的环境下快速生成文档站点的工具，你可以用它为自己的项目快速生成文档而不用关心样式、部署、页面的问题。
+&emsp;&emsp;Fine is a tool to help you generate document sites from individual documents without a server required on your part. It is fast, safe and easy to use, plus you don’t have to worry about neither style nor implementation at all.
 
-   甚至你可以用 fine 来生成自己的博客，fine 为任何一个项目都提供了独特的域名。
+&emsp;&emsp;You can even use Fine to start your own blog, as it provides customized domains to each site it generates.
 
-   当然，最重要的是，fine 是免费的。
+&emsp;&emsp;And of course, as a rule of thumb, Fine is always free.
    
-   [了解更多](https://fine.sh) 
+&emsp;&emsp;[more](https://fine.sh)
 
 <br/>
 
-## 尝试一下
+## Have a try
 
    ```
    npx @fine.sh/cli
@@ -41,7 +42,13 @@
 
 <br/>
 
+## THANKS
 
+&emsp;&emsp;Translator:
+
+  -  Szyanne
+
+<br/>
 
 ## LICENSE
 
