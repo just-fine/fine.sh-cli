@@ -1,15 +1,24 @@
 os = require 'os'
 fs = require 'fs'
 path = require 'path'
+chalk = require 'chalk'
+emoji = require 'node-emoji'
 child = require 'child_process'
 home = path.join os.homedir(), '.fine'
 storage_file = path.join home, 'storage.json'
 cache_dir = path.join home, 'cache'
 
+
 init_home = () ->
-  fs.mkdirSync home if not fs.existsSync home
-  fs.mkdirSync cache_dir if not fs.existsSync cache_dir
-  fs.writeFileSync storage_file, '{}' if not fs.existsSync storage_file
+  try
+    fs.mkdirSync home if not fs.existsSync home
+    fs.mkdirSync cache_dir if not fs.existsSync cache_dir
+    fs.writeFileSync storage_file, '{}' if not fs.existsSync storage_file
+  catch err
+    key = "#{home}+#{process.platform}+permission+denied"
+    console.log ''
+    console.log chalk.red " #{emoji.get 'lock'} directory '#{home}' does not have write permission."
+    console.log chalk.cyan " #{emoji.get 'link'} https://stackoverflow.com/search?q=#{key}"
 
 class Cache
   path: cache_dir

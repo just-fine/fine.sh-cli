@@ -30,8 +30,8 @@ login = () ->
     return if not session
     fine.storage.save 'session', session
     wait.succeed 'login successfully.'
-    clearInterval timer
     process.exit 1
+    clearInterval timer
   ), 650)
 
 
