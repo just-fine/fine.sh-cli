@@ -8,6 +8,7 @@ yarn-error.log*
 # Runtime data
 pids
 temp
+.fine
 *.pid
 *.seed
 *.pid.lock

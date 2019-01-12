@@ -49,13 +49,27 @@ promps = [
   }
 ]
 
+check_json = (json) ->
+  if json.links and not Array.isArray json.links
+    console.log chalk.red "\n #{emoji.get 'x'}  'links' must be a array."
+    process.exit 1
+
+  if json.links and json.links.length isnt 0
+    has_error = json.links.find (item) -> typeof item isnt 'object' or not item?.name or not item?.url
+    if has_error
+      console.log chalk.red "\n #{emoji.get 'x'}  every item of a 'links' must be an object"
+      console.log chalk.cyan " #{emoji.get 'point_right'} \"links\": [{ name: \"google\", url: \"https://google.com\"}]"
+      process.exit 1
+
+  json
+
 find_setting_file = () ->
   paths = path.join process.cwd(), '.fine/fine.json'
   isExist = fs.existsSync paths
   return false if not isExist
   setting = fs.readFileSync paths, 'utf-8'
   try
-    return JSON.parse setting
+    check_json JSON.parse setting
   catch err
     console.log chalk.red " #{emoji.get 'x'}  there are problems in the setting file."
     console.log chalk.cyan " #{emoji.get 'thinking_face'} you need to check [#{chalk.yellow '.fine/fine.json'}] agian."
