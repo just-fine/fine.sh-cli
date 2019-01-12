@@ -11,7 +11,9 @@ set_default_index = (sides) ->
 
 sides_assign_settings = (sides, settings) ->
   return set_default_index sides if fine.is_tourist
-  
+  if "#{settings.index_page}".includes '.md'
+    settings.index_page = (settings.index_page.split '.md')[0]
+
   has_index = false
   set_index = (item) ->
     return item if item.label isnt settings.index_page
