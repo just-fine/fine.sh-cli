@@ -4,6 +4,8 @@
 <br/>
 <br/>
 
+[![CircleCI](https://circleci.com/gh/just-fine/fine.sh-cli.svg?style=svg)](https://circleci.com/gh/just-fine/fine.sh-cli)
+
 > fine -- generate your document site in 3 seconds
   
 &emsp;Fine is currently in beta, and we will bring more updates on its functionality and integrity as the project develops.
