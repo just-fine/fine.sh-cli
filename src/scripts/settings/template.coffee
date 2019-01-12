@@ -8,4 +8,6 @@ module.exports =
   index_page: null
   
   fine_version: pkg.version
+
+  links: []
   

@@ -71,6 +71,7 @@ runtime = (files, settings) ->
   {
     sides: cleaned_sides
     project_name: make_project_name settings
+    links: settings.links or []
   }
 
 
