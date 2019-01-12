@@ -15,7 +15,7 @@ class Cache
   path: cache_dir
   
   clear: () ->
-    child.execSync "rm -rf #{cache_dir}"
+    await fine.rm cache_dir
     fs.mkdirSync cache_dir
 
 class BaseIO
