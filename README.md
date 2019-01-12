@@ -15,6 +15,8 @@
 <br/>
 
 ## Preview
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fjust-fine%2Ffine.sh-cli.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fjust-fine%2Ffine.sh-cli?ref=badge_shield)
+
 
 <p align="left" height="250">
   <img height="300" src="fine.sh.gif" align="center"/>
@@ -57,3 +59,6 @@ Translator:
 
 <br/>
 <br/>
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fjust-fine%2Ffine.sh-cli.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fjust-fine%2Ffine.sh-cli?ref=badge_large)
