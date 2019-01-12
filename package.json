@@ -1,6 +1,6 @@
 {
   "name": "@fine.sh/cli",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "",
   "main": "dist/bin/fine.js",
   "preferGlobal": true,
