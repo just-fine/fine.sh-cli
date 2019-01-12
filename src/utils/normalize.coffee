@@ -2,6 +2,7 @@ pkg = require '../../package.json'
 storage = require './storage'
 print = require './print'
 emoji = require 'node-emoji'
+rimraf = require 'rimraf'
 chalk = require 'chalk'
 
 Function::define = (prop, desc) ->
@@ -26,5 +27,11 @@ global.fine =
     console.log chalk.red "#{emoji.get 'astonished'} something looks wrong."
     console.log chalk.red txt if txt
     process.exit 1
+
+  rm: (paths) ->
+    new Promise (resolve, reject) ->
+      rimraf paths, (err) ->
+        reject err if err?
+        do resolve
   
   

@@ -12,8 +12,12 @@ dispense_command = () ->
   
   handler = commands[arg]
   return fine.exit "not found command: [#{arg}]" if arg and not handler
-  
-  await do handler.run
+
+  process.on 'unhandledRejection', () ->
+
+  try
+    await do handler.run
+  catch err
   true
 
 module.exports =

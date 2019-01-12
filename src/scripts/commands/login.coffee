@@ -3,11 +3,13 @@ ora = require 'ora'
 http = require '../networks/http'
 
 request_token = () ->
-  json = await http.post '/tokens', do http.make_options
-  if not json.token
-    fine.print.error json.message if json.message?
-    fine.print.error 'unable to connect to server'
-  json.token
+  try
+    json = await http.post '/tokens', do http.make_options
+    if not json.token
+      fine.print.error json.message if json.message?
+      fine.print.error 'unable to connect to server'
+    json.token
+  catch err
 
 request_session = (token) ->
 #  token = 'bd74a5ab-eca4-4d4a-b959-9335d1aa76d4'
@@ -22,14 +24,14 @@ login = () ->
   token = await do request_token
   open "https://fine.sh/auth/validate?command_id=#{token}"
   wait.start 'waiting for login validation...'
-  
+
   timer = setInterval((() ->
     session = await request_session token
     return if not session
     fine.storage.save 'session', session
     wait.succeed 'login successfully.'
-    clearInterval timer
     process.exit 1
+    clearInterval timer
   ), 650)
 
 

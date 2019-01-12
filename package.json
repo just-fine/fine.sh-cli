@@ -1,6 +1,6 @@
 {
   "name": "@fine.sh/cli",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "description": "",
   "main": "dist/bin/fine.js",
   "preferGlobal": true,
@@ -53,6 +53,7 @@
     "ora": "^3.0.0",
     "request": "^2.88.0",
     "request-promise": "^4.2.2",
+    "rimraf": "^2.6.3",
     "update-notifier": "^2.5.0"
   }
 }
