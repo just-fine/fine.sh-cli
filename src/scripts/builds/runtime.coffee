@@ -16,7 +16,7 @@ sides_assign_settings = (sides, settings) ->
   set_index = (item) ->
     return item if item.label isnt settings.index_page
     has_index = true
-    item.index = true
+    Object.assign item, { index: true }
 
   sides = (set_index item for item in sides)
   (has_index and sides) or set_default_index sides
