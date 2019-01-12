@@ -8,7 +8,7 @@ template = "
   <link rel=preconnect href=\"//fine.sh\">
   <link rel=icon href=\"//cdn.jsdelivr.net/npm/@fine.sh/front/dist/favicon.ico\">
   <link rel=\"stylesheet\" href=\"//cdn.jsdelivr.net/npm/@fine.sh/themes@0.0.2/dist/plain.css\">
-  <title>fine</title>
+  <title>FINE_TITLE</title>
 </head>
 <script>window.fine_settings=FINE_INTERFACE</script>
 <body>

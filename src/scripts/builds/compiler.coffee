@@ -10,8 +10,10 @@ make_hash = (content) ->
   hash.update content
   hash.digest 'hex'
 
-make_entry_to_cache = (apis) ->
+make_entry_to_cache = (apis, settings) ->
+  title = (settings.project_name and "#{settings.project_name} - fine.sh") or 'fine.sh'
   content = runtime_template.replace 'FINE_INTERFACE', (JSON.stringify apis)
+  content = content.replace 'FINE_TITLE', title
   target_path = path.join fine.storage.cache.path, 'index.html'
   fs.writeFileSync target_path, content, 'utf-8'
 
@@ -37,7 +39,7 @@ compiler = (files = [], settings) ->
   await do fine.storage.cache.clear
   hashed_files = (await make_html_to_cache file for file in files)
   runtime_apis = runtime.run hashed_files, settings
-  make_entry_to_cache runtime_apis
+  make_entry_to_cache runtime_apis, settings
 
 module.exports =
   run: compiler
