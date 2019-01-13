@@ -8,6 +8,9 @@ yarn-error.log*
 # Runtime data
 pids
 temp
+.nyc_output
+coverage
+.coveralls.yml
 .fine
 *.pid
 *.seed

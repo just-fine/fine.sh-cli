@@ -16,12 +16,9 @@ promps = [{
 }]
 
 guider = () ->
-  try
-    { is_tourist } = await inquirer.prompt promps
-    fine.is_tourist = is_tourist
-    is_tourist
-  catch err
-    fine.exit err
+  { is_tourist } = await inquirer.prompt promps
+  fine.is_tourist = is_tourist
+  is_tourist
 
 module.exports =
   run: guider

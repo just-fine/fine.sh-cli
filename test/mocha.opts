@@ -1,0 +1,5 @@
+
+--recursive
+--require coffeescript/register
+--watch-extensions cofffee
+test/**/*.coffee
