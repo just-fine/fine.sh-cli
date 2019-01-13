@@ -2,22 +2,26 @@
   "name": "@fine.sh/cli",
   "version": "0.0.9",
   "description": "",
-  "main": "dist/bin/fine.js",
   "preferGlobal": true,
+  "main": "dist/bin/fine.js",
+  "author": "WittBulter (nanazuimeng123@gmail.com)",
+  "homepage": "https://github.com/just-fine/fine.sh-cli#readme",
+  "license": "MIT",
   "scripts": {
     "start": "npm run pre_build && webpack --config temp/w.js -p -w",
     "build": "npm run pre_build && webpack --config temp/w.js -p",
     "pre_build": "rm -rf temp && coffee -co temp/w.js scripts/webpack.coffee",
     "deploy": "npm run build && npm publish --access=public",
+    "cover:local": "nyc mocha;open coverage/lcov-report/index.html",
     "test": "mocha",
-    "clean": "rm -rf dist temp"
+    "clean": "rm -rf dist temp .nyc_output coverage"
   },
   "bin": {
     "fine": "dist/bin/fine.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/WittBulter/fine.git"
+    "url": "https://github.com/just-fine/fine.sh-cli"
   },
   "files": [
     "LICENSE",
@@ -25,10 +29,8 @@
     "dist/",
     "templates/"
   ],
-  "author": "WittBulter (nanazuimeng123@gmail.com)",
-  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/WittBulter/fine/issues"
+    "url": "https://github.com/just-fine/fine.sh-cli/issues"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^7.1.2",
@@ -41,10 +43,10 @@
     "cz-conventional-changelog": "^2.1.0",
     "husky": "^1.3.0",
     "mocha": "^5.2.0",
+    "nyc": "^13.1.0",
     "webpack": "^4.28.3",
     "webpack-cli": "^3.1.2"
   },
-  "homepage": "https://github.com/WittBulter/fine#readme",
   "dependencies": {
     "chalk": "^2.4.1",
     "cli-table3": "^0.5.1",
@@ -59,5 +61,23 @@
     "request-promise": "^4.2.2",
     "rimraf": "^2.6.3",
     "update-notifier": "^2.5.0"
+  },
+  "nyc": {
+    "include": [
+      "src/scripts/**/*.coffee"
+    ],
+    "extension": [
+      ".coffee"
+    ],
+    "require": [
+      "./node_modules/coffeescript/register"
+    ],
+    "reporter": [
+      "lcov",
+      "text",
+      "text-summary"
+    ],
+    "cache": true,
+    "report-dir": "./coverage"
   }
 }
