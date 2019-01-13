@@ -10,6 +10,7 @@ pids
 temp
 .nyc_output
 coverage
+.coveralls.yml
 .fine
 *.pid
 *.seed
