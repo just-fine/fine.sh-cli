@@ -33,6 +33,7 @@
   "devDependencies": {
     "@commitlint/config-conventional": "^7.1.2",
     "chai": "^4.2.0",
+    "coffee": "^5.2.1",
     "coffee-loader": "^0.9.0",
     "coffeescript": "^2.3.2",
     "commitizen": "^3.0.5",
