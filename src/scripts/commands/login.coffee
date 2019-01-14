@@ -14,25 +14,32 @@ request_token = () ->
 request_session = (token) ->
 #  token = 'bd74a5ab-eca4-4d4a-b959-9335d1aa76d4'
   try
-    json = await http "/sessions/command/#{token}", do http.make_options
+    json = await http "/sessions/commands/#{token}", do http.make_options
     return false if not json or not json.token
     json.token
   catch err
 
 login = () ->
+  count = 0
   wait = new ora
   token = await do request_token
   open "https://fine.sh/auth/validate?command_id=#{token}"
   wait.start 'waiting for login validation...'
 
   timer = setInterval((() ->
+    count = count + 1
+    if count > 60
+      wait.fail'server timeout.'
+      clearInterval timer
+      return process.exit 0
+
     session = await request_session token
     return if not session
     fine.storage.save 'session', session
     wait.succeed 'login successfully.'
-    process.exit 1
     clearInterval timer
-  ), 650)
+    process.exit 1
+  ), 1200)
 
 
 module.exports =
