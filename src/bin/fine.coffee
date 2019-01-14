@@ -13,6 +13,7 @@ commander.on '--help', ->
   console.log '  ls  --  show all projects'
   console.log '  rm  --  remove a project'
   console.log '  who  --  show current user'
+  console.log '  report  --  report a bug or problem'
 
 commander
   .version pkg.version, '-v, --version'

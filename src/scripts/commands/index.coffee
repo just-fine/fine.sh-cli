@@ -4,6 +4,7 @@ commands =
   ls: require './list'
   who: require './who'
   rm: require './remove'
+  report: require './report'
 
 
 dispense_command = () ->
