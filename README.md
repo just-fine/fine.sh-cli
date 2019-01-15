@@ -28,7 +28,7 @@
 
 &emsp;&emsp;You can even use Fine to start your own blog, as it provides customized domains to each site it generates.
 
-&emsp;&emsp;And of course, as a rule of thumb, Fine is always free.
+&emsp;&emsp;Fine has a global professional CDN, and of course, Fine is always free.
 
 <br/>
 
