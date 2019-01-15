@@ -26,7 +26,7 @@
 
 &emsp;&emsp;甚至你可以用 fine 来生成自己的博客，fine 为任何一个项目都提供了独特的域名。
 
-&emsp;&emsp;当然，最重要的是，fine 是免费的。
+&emsp;&emsp;Fine 也拥有全球专业级别 CDN。当然，最重要的是，fine 是免费的。
 
 <br/>
 
