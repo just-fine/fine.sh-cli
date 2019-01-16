@@ -1,21 +1,20 @@
 {
   "name": "@fine.sh/cli",
   "version": "0.0.10",
-  "description": "",
+  "description": "generate your document site in 3 seconds",
   "preferGlobal": true,
   "main": "dist/bin/fine.js",
   "author": "WittBulter (nanazuimeng123@gmail.com)",
   "homepage": "https://github.com/just-fine/fine.sh-cli#readme",
   "license": "MIT",
   "scripts": {
-    "start": "npm run pre_build && webpack --config temp/w.js -p -w",
-    "build": "npm run pre_build && webpack --config temp/w.js -p",
-    "pre_build": "rm -rf temp && coffee -co temp/w.js scripts/webpack.coffee",
+    "start": "cake start",
+    "build": "cake build",
+    "clean": "cake clear",
     "deploy": "npm run build && npm publish --access=public",
     "cover:local": "nyc mocha;open coverage/lcov-report/index.html",
     "cover:hook": "nyc mocha;cat ./coverage/lcov.info | coveralls",
-    "test": "mocha",
-    "clean": "rm -rf dist temp .nyc_output coverage"
+    "test": "mocha"
   },
   "bin": {
     "fine": "dist/bin/fine.js"
@@ -47,7 +46,8 @@
     "mocha": "^5.2.0",
     "nyc": "^13.1.0",
     "webpack": "^4.28.3",
-    "webpack-cli": "^3.1.2"
+    "webpack-cli": "^3.1.2",
+    "webpack-merge": "^4.2.1"
   },
   "dependencies": {
     "chalk": "^2.4.1",
