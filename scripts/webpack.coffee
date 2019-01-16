@@ -28,8 +28,6 @@ module.exports = ->
 
   target: 'node'
   
-  devtool: 'source-map'
-
   module:
     rules: [
       test: /\.coffee$/
