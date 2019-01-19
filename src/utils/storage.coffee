@@ -53,7 +53,7 @@ class Storage extends BaseIO
   save: (key, value = null) ->
     return {} if not key
     key_value = { "#{key}": value }
-    next = Object.assign {}, key_value, do @find_all
+    next = Object.assign {}, do @find_all, key_value
     @save_dict next
     key_value
   
