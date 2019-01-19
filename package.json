@@ -1,6 +1,6 @@
 {
   "name": "@fine.sh/cli",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "generate your document site in 3 seconds",
   "preferGlobal": true,
   "main": "dist/bin/fine.js",
