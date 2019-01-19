@@ -6,7 +6,7 @@
 
 [![CircleCI](https://circleci.com/gh/just-fine/fine.sh-cli.svg?style=svg)](https://circleci.com/gh/just-fine/fine.sh-cli)
 
-> fine -- generate your document site in 3 seconds
+> fine -- generate your static website in 3 seconds
   
 &emsp;Fine is currently in beta, and we will bring more updates on its functionality and integrity as the project develops.
   
@@ -24,7 +24,7 @@
 
 ## What is Fine
 
-&emsp;&emsp;Fine is a tool to help you generate document sites from individual documents without a server required on your part. It is fast, safe and easy to use, plus you don’t have to worry about neither style nor implementation at all.
+&emsp;&emsp;Fine is a tool to help you generate static website. It is fast, safe and easy to use, plus you don’t have to worry about neither style nor implementation at all.
 
 &emsp;&emsp;You can even use Fine to start your own blog, as it provides customized domains to each site it generates.
 
@@ -34,6 +34,8 @@
 
 ## Have a try
 
+  **Fine cli required [NodeJS > 8.0](https://nodejs.org/)**
+
    ```
    npx @fine.sh/cli
    ```
@@ -41,8 +43,6 @@
 <br/>
 
 ## THANKS
-
-Translator:
 
   -  Szyanne
 
