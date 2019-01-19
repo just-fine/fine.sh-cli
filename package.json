@@ -1,7 +1,7 @@
 {
   "name": "@fine.sh/cli",
   "version": "0.0.11",
-  "description": "generate your document site in 3 seconds",
+  "description": "generate your static website in 3 seconds",
   "preferGlobal": true,
   "main": "dist/bin/fine.js",
   "author": "WittBulter (nanazuimeng123@gmail.com)",
