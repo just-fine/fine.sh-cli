@@ -12,7 +12,7 @@ class Builds
       return false
     if not fine.project_reg.test settings.project_name
       fine.print.error 'project_name is not allowed.'
-      fine.print.error 'allow symbols: [a-Z], [0-9], [_]'
+      fine.print.error 'allow symbols: [a-Z], [0-9], [-]'
       return false
     true
 

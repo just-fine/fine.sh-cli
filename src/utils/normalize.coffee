@@ -21,7 +21,7 @@ global.fine =
 
   print: print
   
-  project_reg: /^[a-zA-Z][a-zA-Z0-9_]{4,20}$/
+  project_reg: /^[a-z][a-z0-9\-]{4,20}[a-z]$/
   
   exit: (txt) ->
     console.log chalk.red "#{emoji.get 'astonished'} something looks wrong."
