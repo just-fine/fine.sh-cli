@@ -5,7 +5,7 @@
 <br/>
 
 ## Archived
-## Now you have a better choice: [now-md](https://zeit.co/docs/v2/deployments/official-builders/mdx-deck-now-mdx-deck/)**
+## Now you have a better choice: [now-md](https://zeit.co/docs/v2/deployments/official-builders/mdx-deck-now-mdx-deck/)
 
 <br/>
 
