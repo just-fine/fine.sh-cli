@@ -4,6 +4,11 @@
 <br/>
 <br/>
 
+## Archived
+## Now you have a better choice: [now-md](https://zeit.co/docs/v2/deployments/official-builders/mdx-deck-now-mdx-deck/)**
+
+<br/>
+
 [![CircleCI](https://circleci.com/gh/just-fine/fine.sh-cli.svg?style=svg)](https://circleci.com/gh/just-fine/fine.sh-cli)
 
 > fine -- generate your static website in 3 seconds
@@ -46,15 +51,6 @@
 
   -  Szyanne
 
-<br/>
-
-## Links
-
-  - [中文 README](README_CN.md)
-  
-  - [fine.sh](https://fine.sh)
-
-  
 <br/>
 
 ## LICENSE
